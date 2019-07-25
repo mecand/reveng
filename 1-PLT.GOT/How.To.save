@@ -1,0 +1,13 @@
+gdb ./example1
+disass main
+break *0x080491eb
+r
+x/i $pc
+x/wx *0xCORRESPONDINGADDRESSOFFUNCTION
+si
+x/4i $pc
+si
+si
+x/4i $pc
+
+x/4i JUMPADDRESS
